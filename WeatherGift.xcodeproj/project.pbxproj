@@ -91,7 +91,6 @@
 				1E8C6A8EA3B39174BA39106A /* Pods-WeatherGift.debug.xcconfig */,
 				1BB328DE3AFCDC2E83A935BF /* Pods-WeatherGift.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
