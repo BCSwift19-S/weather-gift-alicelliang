@@ -15,7 +15,7 @@ class DetailVC: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var currentImage: UIImageView!
-    
+     
     var currentPage = 0
     var locationsArray = [String]()
     
