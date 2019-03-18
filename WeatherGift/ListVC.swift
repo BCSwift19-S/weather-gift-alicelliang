@@ -12,7 +12,6 @@ import GooglePlaces
 class ListVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var editBarButton: UIBarButtonItem!
     @IBOutlet weak var addBarButton: UIBarButtonItem!
     
@@ -39,7 +38,6 @@ class ListVC: UIViewController {
             tableView.setEditing(false, animated: true)
             editBarButton.title = "Edit"
             addBarButton.isEnabled = true
-            
         } else {
             tableView.setEditing(true, animated: true)
             editBarButton.title = "Done"
@@ -111,7 +109,9 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
     
     func updateTable(place: GMSPlace) {
         let newIndexPath =  IndexPath(row: locationsArray.count , section: 0)
-        locationsArray.append(place.name!)
+        var newWeatherLocation = WeatherLocation()
+        newWeatherLocation.name = place.name!
+        locationsArray.append(newWeatherLocation)
         tableView.insertRows(at: [newIndexPath], with: .automatic)
     }
 }
