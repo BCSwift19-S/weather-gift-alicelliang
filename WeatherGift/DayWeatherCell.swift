@@ -8,6 +8,13 @@
 
 import UIKit
 
+private let dateFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "EEEE"
+    print("**** DateFormatter just created in dayWeatherCell")
+    return dateFormatter
+}()
+
 class DayWeatherCell: UITableViewCell {
     @IBOutlet weak var dayCellIcon: UIImageView!
     @IBOutlet weak var dayCellWeekday: UILabel!
@@ -24,12 +31,10 @@ class DayWeatherCell: UITableViewCell {
         dayCellSummary.text = dailyForecast.dailySummary
         dayCellMaxTemp.text = String(format: "%2.f", dailyForecast.dailyMaxTemp) + "°"
         dayCellMinTemp.text = String(format: "%2.f", dailyForecast.dailyMinTemp) + "°"
-
-        let usableDate = Date(timeIntervalSince1970: dailyForecast.dailyDate)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        dateFormatter.timeZone = TimeZone(identifier: timeZone)
-        let dateString = dateFormatter.string(from: usableDate)
+//        let usableDate = Date(timeIntervalSince1970: dailyForecast.dailyDate)
+//        dateFormatter.timeZone = TimeZone(identifier: timeZone)
+//        let dateString = dateFormatter.string(from: usableDate)
+        let dateString = dailyForecast.dailyDate.format(timeZone: timeZone, dateFormatter: dateFormatter)
         dayCellWeekday.text = dateString
     }
 }
