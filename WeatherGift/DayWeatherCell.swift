@@ -11,7 +11,7 @@ import UIKit
 private let dateFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "EEEE"
-    print("**** DateFormatter just created in dayWeatherCell")
+//    print("**** DateFormatter just created in dayWeatherCell")
     return dateFormatter
 }()
 
